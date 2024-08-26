@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.8/css/pico.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Flask Blog</title>
+</head>
+<body>
+    <header>
+        {% include '_navbar.html' %}
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        {% include '_footer.html' %}
+    </footer>
+</body>
+</html>
