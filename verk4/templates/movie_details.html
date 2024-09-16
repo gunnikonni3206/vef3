@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie['title'] }}</title>
+</head>
+<body>
+    <h1>{{ movie['title'] }}</h1>
+    <img src="https://image.tmdb.org/t/p/w500{{ movie['poster_path'] }}" alt="{{ movie['title'] }}">
+    <p>{{ movie['overview'] }}</p>
+    <p>Release Date: {{ movie['release_date'] }}</p>
+    <p>Runtime: {{ movie['runtime'] }} minutes</p>
+    <p>Genres: 
+        {% for genre in movie['genres'] %}
+            {{ genre['name'] }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video['key'] }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</body>
+</html>
