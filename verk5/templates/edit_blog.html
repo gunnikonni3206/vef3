@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Blog{% endblock %}
+
+{% block content %}
+<h2>Edit Blog Post</h2>
+<form method="POST" action="{{ url_for('edit_blog', index=index) }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.title.label }}<br>
+        {{ form.title(size=64) }}
+        {% for error in form.title.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.content.label }}<br>
+        {{ form.content() }}
+        {% for error in form.content.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}

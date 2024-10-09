@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ 'Edit' if post else 'New' }} Post</h1>
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <label>Title</label>
+    {{ form.title }}
+    <label>Content</label>
+    {{ form.content }}
+    <label>Image</label>
+    {{ form.image }}
+    {{ form.submit }}
+</form>
+{% endblock %}

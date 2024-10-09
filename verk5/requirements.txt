@@ -1,0 +1,6 @@
+Flask
+Flask-WTF
+WTForms
+flask-ckeditor
+flask-paginate
+requests
